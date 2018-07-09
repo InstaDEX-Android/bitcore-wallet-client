@@ -51173,7 +51173,7 @@ addNetwork({
   networkMagic: 0xfbf2efb4,
   port: 51738,
   dnsSeeds: [
-    'mainnet.instadex.io'
+    'instadex.seeds.mn.zone'
   ]
 });
 
