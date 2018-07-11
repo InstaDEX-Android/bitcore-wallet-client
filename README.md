@@ -1,16 +1,16 @@
-# bitcore-wallet-client
+# Bitcore-Dash Wallet Client
 
 [![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-client.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-client)
-[![Build Status](https://img.shields.io/travis/bitpay/bitcore-wallet-client.svg?branch=master&style=flat-square)](https://travis-ci.org/bitpay/bitcore-wallet-client)
-[![Coverage Status](https://coveralls.io/repos/bitpay/bitcore-wallet-client/badge.svg)](https://coveralls.io/r/bitpay/bitcore-wallet-client)
+[![Build Status](https://img.shields.io/travis/dashpay/bitcore-wallet-client.svg?branch=master&style=flat-square)](https://travis-ci.org/dashpay/bitcore-wallet-client)
+[![Coverage Status](https://coveralls.io/repos/dashpay/bitcore-wallet-client/badge.svg)](https://coveralls.io/r/dashpay/bitcore-wallet-client)
 
-The *official* client library for [bitcore-wallet-service] (https://github.com/bitpay/bitcore-wallet-service).
+The *official* client library for [bitcore-wallet-service] (https://github.com/instadex-android/bitcore-wallet-service).
 
 ## Description
 
-This package communicates with BWS [Bitcore wallet service](https://github.com/bitpay/bitcore-wallet-service) using the REST API. All REST endpoints are wrapped as simple async methods. All relevant responses from BWS are checked independently by the peers, thus the importance of using this library when talking to a third party BWS instance.
+This package communicates with BWS [bitcore wallet service](https://github.com/instadex-android/bitcore-wallet-service) using the REST API. All REST endpoints are wrapped as simple async methods. All relevant responses from BWS are checked independently by the peers, thus the importance of using this library when talking to a third party BWS instance.
 
-See [Bitcore-wallet] (https://github.com/bitpay/bitcore-wallet) for a simple CLI wallet implementation that relays on BWS and uses bitcore-wallet-client.
+See [bitcore-wallet-dash] (https://github.com/instadex-android/bitcore-wallet-dash) for a simple CLI wallet implementation that relays on BWS and uses bitcore-wallet-client.
 
 ## Get Started
 
@@ -21,7 +21,7 @@ You can start using bitcore-wallet-client in any of these two ways:
 
 ## Example
 
-Start your own local [Bitcore wallet service](https://github.com/bitpay/bitcore-wallet-service) instance. In this example we assume you have `bitcore-wallet-service` running on your `localhost:3232`.
+Start your own local [bitcore wallet service](https://github.com/instadex-android/bitcore-wallet-service) instance. In this example we assume you have `bitcore-wallet-service` running on your `localhost:3232`.
 
 Then create two files `irene.js` and `tomas.js` with the content below:
 
@@ -32,7 +32,7 @@ var Client = require('bitcore-wallet-client');
 
 
 var fs = require('fs');
-var BWS_INSTANCE_URL = 'https://bws.bitpay.com/bws/api'
+var BWS_INSTANCE_URL = 'https://bws.dev.instadex.io/bws/api'
 
 var client = new Client({
   baseUrl: BWS_INSTANCE_URL,
@@ -58,7 +58,7 @@ var Client = require('bitcore-wallet-client');
 
 
 var fs = require('fs');
-var BWS_INSTANCE_URL = 'https://bws.bitpay.com/bws/api'
+var BWS_INSTANCE_URL = 'https://bws.dev.instadex.io/bws/api'
 
 var secret = process.argv[2];
 if (!secret) {
@@ -785,7 +785,7 @@ Returns exchange rate for the specified currency & timestamp.
 
 **opts.ts**: `Date`, A timestamp to base the rate on (default Date.now()).
 
-**opts.provider**: `String`, A provider of exchange rates (default 'BitPay').
+**opts.provider**: `String`, A provider of exchange rates (default 'dashpay').
 
 **Returns**: `Object`, rates - The exchange rate.
 
@@ -924,10 +924,9 @@ Usage:
 
 ### Logger.setLevel(level)
 
-Sets the level of a logger. A level can be any bewteen: 'silent', 'debug', 'info', 'log',
+Sets the level of a logger. A level can be any bewteen: 'debug', 'info', 'log',
 'warn', 'error', and 'fatal'. That order matters: if a logger's level is set to
-'warn', calling <tt>level.debug</tt> won't have any effect. If the level is set to 'silent',
-nothing will ever be logged. 'silent' is the default log level.
+'warn', calling <tt>level.debug</tt> won't have any effect.
 
 **Parameters**
 
@@ -1099,7 +1098,7 @@ Check transaction proposal
 
 The MIT License
 
-Copyright (c) 2015 BitPay
+Copyright (c) 2015 dashpay
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
